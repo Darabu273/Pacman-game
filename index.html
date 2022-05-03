@@ -3,9 +3,26 @@
 	<head>
 		<script src="./jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="./app.js"></script>
+		<link rel="stylesheet" href="style.css">
+
 	</head>
 
 	<body>
+
+		<header id="header">
+			<div class="innertube">
+				<h1>Header...</h1>
+			</div>
+		</header>
+		 <div id="Menu"> <!-- Menu-container -->
+			<ul id="menuContainar">	
+				<li><button id="home-menu-btn" class="btn1" data-text="color" onClick="switchScreens(`home-screen`)"> Home</button></li>
+				<li><button id="register-menu-btn" class="btn1" data-text="color" onClick="switchScreens(`register-screen`)"> Register</button></li>
+				<li><button id="login-menu-btn" class="btn1" data-text="color" onClick="switchScreens(`Login-screen`)"> Login</button></li>
+				<li><button id="about-menu-btn" class="btn1" data-text="color"> About</button></li>
+			</ul>
+		</div>
+
 		<div id="score">
 			<label for="lblScore">SCORE:</label>
 			<input id="lblScore" type="text" />
@@ -17,5 +34,14 @@
 		<div id="game">
 			<canvas id="canvas" height="600" width="600"></canvas>
 		</div>
+
+	<div>
+		<footer id="footer">
+			<div class="innertube">
+				<p>Footer...</p>
+			</div>
+		</footer>
+	</div>
 	</body>
+
 </html>

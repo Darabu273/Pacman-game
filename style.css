@@ -1,0 +1,27 @@
+#menuContainar{
+    margin: 0;
+    /* padding-top: 20px; */
+    background-color: #decbb5;
+    padding: 0 0px;
+    height: 60px;
+    line-height: 60px;
+	font-size: 2em;
+	/* font-weight: 300; */
+    text-align: center;
+
+}
+
+#menuContainar.fixed {
+    position: fixed;
+    background-color: #1e202b;
+    z-index: 10000;
+    top: 0;
+    left:0;
+    right: 0;;
+
+}
+
+#menuContainar > li{
+    display: inline-block;
+    padding: 0px;
+}
