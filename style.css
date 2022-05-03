@@ -1,12 +1,10 @@
 #menuContainar{
     margin: 0;
-    /* padding-top: 20px; */
-    background-color: #decbb5;
+    background-color: black;
     padding: 0 0px;
     height: 60px;
     line-height: 60px;
 	font-size: 2em;
-	/* font-weight: 300; */
     text-align: center;
 
 }
@@ -24,4 +22,27 @@
 #menuContainar > li{
     display: inline-block;
     padding: 0px;
+}
+
+
+.button {
+    color: black;
+    border: 2px solid red;
+	padding: 5px 40px;
+    margin: 5px 20px;
+    font-family: cursive;
+    text-transform: uppercase; 
+	font-size: 15px;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px beige;
+        /* background-color: white; */
+
+  } 
+
+/*creating animation effect*/
+button:hover {
+    color: yellow;
+    background: black;
+    box-shadow: 0 0 50px rgb(22, 22, 179);
+    border: 2px solid gray;
 }

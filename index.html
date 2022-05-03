@@ -4,24 +4,45 @@
 		<script src="./jquery-3.4.1.slim.min.js"></script>
 		<script type="text/javascript" src="./app.js"></script>
 		<link rel="stylesheet" href="style.css">
-
 	</head>
 
 	<body>
-
-		<header id="header">
-			<div class="innertube">
-				<h1>Header...</h1>
-			</div>
-		</header>
-		 <div id="Menu"> <!-- Menu-container -->
+		<div id="header" style="background-color: black;">
+			<header>	
+				<div>
+					
+					<center>
+						<img id="pacman_title" src="photos/pacman_title.png" style="width: 650px;height: 250px; top: -200px; margin-top:-50px;;margin-bottom: -150px;">
+					</center>
+					<h3 style="color: white;text-align: center; font-size: 20px; padding-top: 50px	;">made with  &hearts;  by <span style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;">  IdHersk  </span>  &  <span style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;">  DarAb  </span></h3>
+				</div>
+			</header>
+		</div>
+		 <div id="Menu">
 			<ul id="menuContainar">	
-				<li><button id="home-menu-btn" class="btn1" data-text="color" onClick="switchScreens(`home-screen`)"> Home</button></li>
-				<li><button id="register-menu-btn" class="btn1" data-text="color" onClick="switchScreens(`register-screen`)"> Register</button></li>
-				<li><button id="login-menu-btn" class="btn1" data-text="color" onClick="switchScreens(`Login-screen`)"> Login</button></li>
-				<li><button id="about-menu-btn" class="btn1" data-text="color"> About</button></li>
+				<li><button id="Home_btn" class="button" onClick=""> Home</button></li>
+				<li><button id="Registration_btn" class="button" onClick="">Registration</button></li>
+				<li><button id="Login_btn" class="button" onClick="">Login</button></li>
+				<li><button id="About_btn" class="button" > About</button></li>
 			</ul>
 		</div>
+
+		<div id="Content">
+			<div id="welcomePage" class="screen">
+				<div class="Home_button">
+					<br/>
+					<br/>
+					<br/>
+					<center>
+						<img id="pacman_title" src="photos/logo.png" style="width: 200px; height: 200px;">
+					</center>
+					<!--need to change -->
+					<button id="reg_btn" class="button" onClick="myFunction()">Sing Up</button>
+					<button id="login_btn" class="button" onClick="myFunction()">Login</button> 
+					</div>
+			</div>
+		</div>
+
 
 		<div id="score">
 			<label for="lblScore">SCORE:</label>
@@ -42,6 +63,15 @@
 			</div>
 		</footer>
 	</div>
+
+
+<!--  scripts  -->
+<script>
+	function myFunction() {
+		document.getElementById("reg_btn").innerHTML = "Hello World";
+	}
+	</script>
 	</body>
+
 
 </html>
