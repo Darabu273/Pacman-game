@@ -1,60 +1,99 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<script src="./jquery-3.4.1.slim.min.js"></script>
-		<script type="text/javascript" src="./app.js"></script>
-		<link rel="stylesheet" href="style.css">
-	</head>
 
-	<body>
-		<div id="header" style="background-color: black;">
-			<header>	
-				<div>
-					
-					<center>
-						<img id="pacman_title" src="photos/pacman_title.png" style="width: 650px;height: 250px; top: -200px; margin-top:-50px;;margin-bottom: -150px;">
-					</center>
-					<h3 style="color: white;text-align: center; font-size: 20px; padding-top: 50px	;">made with  &hearts;  by <span style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;">  IdHersk  </span>  &  <span style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;">  DarAb  </span></h3>
-				</div>
-			</header>
-		</div>
-		 <div id="Menu">
-			<ul id="menuContainar">	
-				<li><button id="Home_btn" class="button" onClick=""> Home</button></li>
-				<li><button id="Registration_btn" class="button" onClick="">Registration</button></li>
-				<li><button id="Login_btn" class="button" onClick="">Login</button></li>
-				<li><button id="About_btn" class="button" > About</button></li>
-			</ul>
-		</div>
+<head>
+	<script src="./jquery-3.4.1.slim.min.js"></script>
+	<script type="text/javascript" src="./app.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
 
-		<div id="Content">
-			<div id="welcomePage" class="screen">
-				<div class="Home_button">
-					<br/>
-					<br/>
-					<br/>
-					<center>
-						<img id="pacman_title" src="photos/logo.png" style="width: 200px; height: 200px;">
-					</center>
-					<!--need to change -->
-					<button id="reg_btn" class="button" onClick="myFunction()">Sing Up</button>
-					<button id="login_btn" class="button" onClick="myFunction()">Login</button> 
-					</div>
+<body>
+	<div id="header" style="background-color: black;">
+		<header>
+			<div>
+
+				<center>
+					<img id="pacman_title" src="photos/pacman_title.png"
+						style="width: 650px;height: 250px; top: -200px; margin-top:-50px;;margin-bottom: -150px;">
+				</center>
+				<h4 style="color: white;text-align: center; font-size: 20px; padding-top: 50px	;">made with &hearts; by
+					<span style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;"> IdHersk
+					</span> & <span
+						style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;">DarAb </span>
+				</h4>
 			</div>
+		</header>
+	</div>
+	<!-- <nav>
+		<div id="list_div" style="color:white;"><span style="text-decoration:underline;">The List</span>
+			<ol>
+						<li>France</li>
+						<li style="color:green;">Italy
+							<ul>
+								<li>Milan</li>
+								<li style="font-weight:bold; color:white;">Rome</li>
+								<li>Venice</li>
+							</ul>
+						</li>
+						<li>Germany</li>
+						<li>Spain</li>
+			</ol>
 		</div>
+	</nav> -->
+	<div id="Menu">
+		<ul id="menuContainar">
+			<li><button id="Home_btn" class="button" onClick=""> Home</button></li>
+			<li><button id="Registration_btn" class="button" onClick="">Registration</button></li>
+			<li><button id="Login_btn" class="button" onClick="">Login</button></li>
+			<li><button id="About_btn" class="button"> About</button></li>
+		</ul>
+	</div>
+	<div id="Content" class="Content">
+		<div id="welcomePage" class="form-box">
+			<div>
+				<center>
+					<img id="pacman_title" src="photos/logo.png">
+				</center>
+			</div>
+			<div class="Home_button">
+				<div id="btn"></div>
+				<button id="reg_btn" class="button-lr" onClick="register()">Register</button>
+				<button id="login_btn" class="button-lr" onClick="login()">Log in</button>
+			</div>
+			<form id="login" class="input-group">
+				<div>
+					<input type="text" class="input_field" placeholder="User ID" required>
+					<input type="text" class="input_field" placeholder="Enter Password" required>
+					<!-- <input type="checkbox" class="class-box"><span>Remember Password</span> -->
+					<button type="submit" class="submit-btn">Log in</button>
+			</form>
+		</div>
+		<form id="register" class="input-group">
+			<div>
+				<input type="text" class="input_field" placeholder="User ID" required>
+				<input type="email" class="input_field" placeholder="Enter email address" required>
+				<input type="text" class="input_field" placeholder="Enter Password" required>
+				<!-- <input type="checkbox" class="class-box"><span>I agree to the terms & conditions</span> -->
+				<button type="submit" class="submit-btn">register</button>
+			</div>
+		</form>
+	</div>
+	</div>
 
 
-		<div id="score">
-			<label for="lblScore">SCORE:</label>
-			<input id="lblScore" type="text" />
-		</div>
-		<div id="time">
-			<label for="lblTime">TIME:</label>
-			<input id="lblTime" type="text" />
-		</div>
-		<div id="game">
-			<canvas id="canvas" height="600" width="600"></canvas>
-		</div>
+	<!-- <div id="score">
+		<label for="lblScore">SCORE:</label>
+		<input id="lblScore" type="text" />
+
+
+	</div>
+	<div id="time">
+		<label for="lblTime">TIME:</label>
+		<input id="lblTime" type="text" />
+	</div>
+	<div id="game">
+		<canvas id="canvas" height="600" width="600"></canvas>
+	</div> -->
 
 	<div>
 		<footer id="footer">
@@ -65,13 +104,26 @@
 	</div>
 
 
-<!--  scripts  -->
-<script>
-	function myFunction() {
-		document.getElementById("reg_btn").innerHTML = "Hello World";
-	}
+	<!--  scripts  -->
+	<script>
+		var x = document.getElementById("login");
+		var y = document.getElementById("register");
+		var z = document.getElementById("btn");
+
+		function login() {
+			x.style.left = "-400px";
+			y.style.left = "50px";
+			z.style.left = "110px";
+		}
+
+		function register() {
+			x.style.left = "50px";
+			y.style.left = "450px";
+			z.style.left = "0px";
+		}
+
 	</script>
-	</body>
+</body>
 
 
 </html>
