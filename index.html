@@ -2,8 +2,9 @@
 <html>
 
 <head>
-	<script src="./jquery-3.4.1.slim.min.js"></script>
-	<script type="text/javascript" src="./app.js"></script>
+	<script src="./scripts/jquery-3.4.1.slim.min.js"></script>
+	<script type="text/javascript" src="./scripts/app.js"></script>
+	<script type="text/javascript" src="./scripts/general.js"></script>
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="footerStyle.css">
 </head>
@@ -17,11 +18,10 @@
 					<img id="pacman_title" src="photos/pacman_title.png"
 						style="width: 650px;height: 250px; top: -200px; margin-top:-50px;;margin-bottom: -150px;">
 				</center>
-				<h4 style="color: white;text-align: center; font-size: 20px; padding-top: 50px	;">made with &hearts; by
+				<h3 style="color: white;text-align: center; font-size: 20px; padding-top: 60px	;">made with &hearts; by
 					<span style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;"> IdHersk
-					</span> & <span
-						style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;">DarAb </span>
-				</h4>
+					</span> & <span style="white-space: pre;letter-spacing: 5px;font-weight:bold; font-size :27px;">
+						DarAb </span></h3>
 			</div>
 		</header>
 	</div>
@@ -42,15 +42,23 @@
 		</div>
 	</nav> -->
 	<div id="Menu">
-		<ul id="menuContainar">
-			<li><button id="Home_btn" class="button" onClick=""> Home</button></li>
-			<li><button id="Registration_btn" class="button" onClick="">Registration</button></li>
-			<li><button id="Login_btn" class="button" onClick="">Login</button></li>
-			<li><button id="About_btn" class="button"> About</button></li>
+		<ul id="menuContainar">	
+			<li><button id="Home_btn" class="button" onClick="changeScreen('home-screen')"> Home</button></li>
+			<li><button id="Registration_btn" class="button" onClick="changeScreen('registration-screen')">Registration</button></li>
+			<li><button id="Login_btn" class="button" onClick="changeScreen('login-screen')">Login</button></li>
+			<li><button id="About_btn" class="button" onClick="changeScreen('about-screen')" > About</button></li>
 		</ul>
 	</div>
 	<div id="Content" class="Content">
-		<div id="welcomePage" class="form-box">
+		<div id="home-screen" class="screen" style="width: 380px;
+    /* height: 480px; */
+    position: relative;
+    margin: 6% auto;
+    background: rgb(20, 20, 20);
+    padding: 5px;
+    overflow: hidden;
+    opacity: 0.8;">
+			<!-- class="form-box" -->
 			<div>
 				<center>
 					<img id="pacman_title" src="photos/logo.png">
@@ -61,91 +69,98 @@
 				<button id="reg_btn" class="button-lr" onClick="register()">Register</button>
 				<button id="login_btn" class="button-lr" onClick="login()">Log in</button>
 			</div>
-			<form id="login" class="input-group">
+			<!-- <form id="login" class="input-group">
 				<div>
 					<input type="text" class="input_field" placeholder="User ID" required>
 					<input type="text" class="input_field" placeholder="Enter Password" required>
-					<!-- <input type="checkbox" class="class-box"><span>Remember Password</span> -->
 					<button type="submit" class="submit-btn">Log in</button>
-			</form>
+			</form> -->
 		</div>
-		<form id="register" class="input-group">
+		<!-- <form id="register" class="input-group">
 			<div>
 				<input type="text" class="input_field" placeholder="User ID" required>
 				<input type="email" class="input_field" placeholder="Enter email address" required>
 				<input type="text" class="input_field" placeholder="Enter Password" required>
-				<!-- <input type="checkbox" class="class-box"><span>I agree to the terms & conditions</span> -->
 				<button type="submit" class="submit-btn">register</button>
 			</div>
-		</form>
-	</div>
-	</div>
-
-
-	<!-- <div id="score">
-		<label for="lblScore">SCORE:</label>
-		<input id="lblScore" type="text" />
-
-
-	</div>
-	<div id="time">
-		<label for="lblTime">TIME:</label>
-		<input id="lblTime" type="text" />
-	</div>
-	<div id="game">
-		<canvas id="canvas" height="600" width="600"></canvas>
-	</div> -->
-
-
-
-	<div class=footer-container>
-		<div class="footer-cointainer-child dar">
-			<div class="footer-social-icons">
-				<h4 class="_14">Dar Ab</h4>
-				<ul class="social-icons">
-					<li><a href="https://www.linkedin.com/in/dar-abu-53a581237/" class="social-icon"> <i
-								class="fa fa-linkedin"></i></a></li>
-					<li><a href="https://github.com/Darabu273" class="social-icon"> <i class="fa fa-github"></i></a>
-					</li>
-					<li><a href="mailto:darabu@post.bgu.ac.il" class="social-icon"> <i class="fa fa-google"></i></a>
-					</li>
-					<li><a href="https://www.facebook.com/dar.abu.3" class="social-icon"> <i
-								class="fa fa-facebook"></i></a></li>
-					<li><a href="https://www.instagram.com/dar_abu/" class="social-icon"> <i
-								class="fa fa-instagram"></i></a></li>
-				</ul>
-			</div>
+		</form> -->
+		<div id="registration-screen" class="screen" style="display: none;">
+			<h1 style="text-align: center;">this is the registration screen</h1>
 		</div>
-		<div class="footer-cointainer-child ido">
-			<div class="footer-social-icons">
-				<h4 class="_14">Ido Hersk</h4>
-				<ul class="social-icons">
-					<li><a href="https://www.linkedin.com/in/ido-hersko/" class="social-icon"> <i
-								class="fa fa-linkedin"></i></a></li>
-					<li><a href="https://github.com/idohersko" class="social-icon"> <i class="fa fa-github"></i></a>
-					</li>
-					<li><a href="mailto:hersko@post.bgu.ac.il" class="social-icon"> <i class="fa fa-google"></i></a>
-					</li>
-					<li><a href="https://www.facebook.com/ido.hersko/" class="social-icon"> <i
-								class="fa fa-facebook"></i></a></li>
-					<li><a href="https://www.instagram.com/ido_hersko/" class="social-icon"> <i
-								class="fa fa-instagram"></i></a></li>
-				</ul>
-			</div>
+		<div id="login-screen" class="screen" style="display: none;">
+			<h1 style="text-align: center;">this is the log-in screen</h1>
 		</div>
-		<div class="footer-cointainer-child ido">
-			<div class="footer-social-icons">
-				<h4 class="_14">About the project</h4>
-				<span> This project was made in the scope of the Web Development course of Prof. Erez Shalom and Mr.
-					David Zeltser in the Ben-Gurion University, Israel </span>
+
+		<div id="about-screen" class="screen" style="display: none;">
+			<h1 style="text-align: center;">this is the about screen</h1>
+		</div>
+
+		<div id="game-screen" class="screen" style="display: none;">
+			<h1 style="text-align: center;">this is the game screen</h1>
+
+
+			<div id="score">
+				<label for="lblScore">SCORE:</label>
+				<input id="lblScore" type="text" />
+			</div>
+			<div id="time">
+				<label for="lblTime">TIME:</label>
+				<input id="lblTime" type="text" />
+			</div>
+			<div id="game">
+				<canvas id="canvas" height="600" width="600"></canvas>
 			</div>
 		</div>
 
 	</div>
 
+	<footer>
+		<div class=footer-container>
+			<div class="footer-cointainer-child dar">
+				<div class="footer-social-icons">
+					<h4 class="_14">Dar Ab</h4>
+					<ul class="social-icons">
+						<li><a href="https://www.linkedin.com/in/dar-abu-53a581237/" class="social-icon"> <i
+									class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://github.com/Darabu273" class="social-icon"> <i class="fa fa-github"></i></a>
+						</li>
+						<li><a href="mailto:darabu@post.bgu.ac.il" class="social-icon"> <i class="fa fa-google"></i></a>
+						</li>
+						<li><a href="https://www.facebook.com/dar.abu.3" class="social-icon"> <i
+									class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/dar_abu/" class="social-icon"> <i
+									class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-cointainer-child ido">
+				<div class="footer-social-icons">
+					<h4 class="_14">Ido Hersk</h4>
+					<ul class="social-icons">
+						<li><a href="https://www.linkedin.com/in/ido-hersko/" class="social-icon"> <i
+									class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://github.com/idohersko" class="social-icon"> <i class="fa fa-github"></i></a>
+						</li>
+						<li><a href="mailto:hersko@post.bgu.ac.il" class="social-icon"> <i class="fa fa-google"></i></a>
+						</li>
+						<li><a href="https://www.facebook.com/ido.hersko/" class="social-icon"> <i
+									class="fa fa-facebook"></i></a></li>
+						<li><a href="https://www.instagram.com/ido_hersko/" class="social-icon"> <i
+									class="fa fa-instagram"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="footer-cointainer-child ido">
+				<div class="footer-social-icons">
+					<h4 class="_14">About the project</h4>
+					<span class="_14"> This project was made in the scope of the Web Development course of Prof. Erez
+						Shalom and Mr.
+						David Zeltser in the Ben-Gurion University, Israel </span>
+				</div>
+			</div>
 
-
-
+		</div>
+	</footer>
 
 
 	<!--  scripts  -->
