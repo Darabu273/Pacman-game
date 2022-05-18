@@ -2,18 +2,26 @@
 <html>
 
 <head>
-	<script src="./scripts/jquery-3.4.1.slim.min.js"></script>
-	<script type="text/javascript" src="./scripts/app.js"></script>
-	<script type="text/javascript" src="./scripts/general.js"></script>
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="footerStyle.css">
+	<link rel="stylesheet" href="styles/footerStyle.css">
+	<link rel="stylesheet" href="styles/settings.css">
+
+	<!-- Remember to include jQuery :) -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+
+	<!-- jQuery Modal -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+
+	<title> Pacman Dar & Ido</title>
+	<link rel="icon" href="photos/other/favicon.ico.ico">
 </head>
 
 <body>
+	<!------header------>
 	<div id="header">
 		<header>
 			<div>
-
 				<center>
 					<img id="pacman_title" src="photos/pacman_title.png"
 						style="width: 650px;height: 250px; top: -200px; margin-top:-50px;;margin-bottom: -150px;">
@@ -24,35 +32,27 @@
 			</div>
 		</header>
 	</div>
-	<!-- <nav>
-		<div id="list_div" style="color:white;"><span style="text-decoration:underline;">The List</span>
-			<ol>
-						<li>France</li>
-						<li style="color:green;">Italy
-							<ul>
-								<li>Milan</li>
-								<li style="font-weight:bold; color:white;">Rome</li>
-								<li>Venice</li>
-							</ul>
-						</li>
-						<li>Germany</li>
-						<li>Spain</li>
-			</ol>
-		</div>
-	</nav> -->
+	<!------MenuBar - buttons------>
 	<div id="Menu">
+		<script>
+			function aboutFunctionModal() {
+				document.getElementById("about-modal").click();
+			}
+		</script>
 		<ul id="menuContainar">
-			<li><button id="Home_btn" class="button" onClick="changeScreen('home-screen')"> Home</button></li>
-			<li><button id="Registration_btn" class="button"
+			<li><button id="Home_btn" class="btn-menu" onClick="changeScreen('home-screen')"> Home</button></li>
+			<li><button id="Registration_btn" class="btn-menu"
 					onClick="changeScreen('registration-screen')">Registration</button></li>
-			<li><button id="Login_btn" class="button" onClick="changeScreen('login-screen')">Login</button></li>
-			<li><button id="About_btn" class="button" onClick="changeScreen('about-screen')"> About</button></li>
+			<li><button id="Login_btn" class="btn-menu" onClick="changeScreen('login-screen')">Login</button></li>
+			<li><button id="About_btn" class="btn-menu" onClick="aboutFunctionModal()">About</button></li>
 		</ul>
 	</div>
+	<!------Content------>
 	<div id="Content" class="Content">
+		<!------home-screen------>
 		<div id="home-screen" class="screen">
+
 			<img id="pacman_title" src="photos/logo.png">
-			<!-- class="form-box" -->
 			<div>
 			</div>
 			<div class="Home_button">
@@ -60,45 +60,242 @@
 				<button id="login_btn" class="button-lr" onClick="changeScreen('login-screen')">Log in</button>
 			</div>
 		</div>
+
+		<!-------------------------------------registration-screen----------------------------------------->
 		<div id="registration-screen" class="screen" style="display: none;">
-			<form id="register" class="input-group">
-				<div>
-					<input type="text" class="input_field" placeholder="User ID" required>
-					<input type="email" class="input_field" placeholder="Enter email address" required>
-					<input type="text" class="input_field" placeholder="Enter Password" required>
-					<button type="submit" class="submit-btn">register</button>
-				</div>
+
+			<form id="register" class="input-group" onsubmit="return false">
+				<!-- to update -->
+				<h1>REGISTER</h1>
+				<!-- <label for="userId">New User ID:</label> -->
+				<input type="text" class="input_field" id="userName" name="userName" placeholder="User ID">
+
+				<!-- <label for="pwd">New Password:</label> -->
+				<input type="password" class="input_field" id="password" name="password"
+					placeholder="Enter New Password">
+
+				<!-- <label for="fullName">Full Name:</label> -->
+				<input type="text" class="input_field" id="fullName" name="fullName" placeholder="Full Name">
+
+				<!-- <label for="email">Email:</label> -->
+				<input type="email" class="input_field" id="email" name="email" placeholder="Enter Email Address">
+
+				<!-- <label for="birthday">Birthday:</label> -->
+				<input type="date" class="input_field" id="birthday" name="birthday" placeholder="Birth Date"
+					style="color: white;">
+				<br />
+				<br />
+				<button type="submit" class="submit-btn">register</button>
+				<p class="form__text">
+					<a class="form__link" href="#" onClick="changeScreen('login-screen')">Already have an account? Sing
+						in </a>
+				</p>
 			</form>
 		</div>
+
+		<!------login-screen------>
 		<div id="login-screen" class="screen" style="display: none;">
-			<form id="login" class="input-group">
-				<div>
-					<input type="text" class="input_field" placeholder="User ID" required>
-					<input type="text" class="input_field" placeholder="Enter Password" required>
-					<button type="submit" class="submit-btn">Log in</button>
-				</div>
+
+			<form id="login" class="input-group" onsubmit="return verifyPassword()">
+				<h1>SING IN</h1>
+				<!-- <label for="userId">User ID:</label> -->
+				<input type="text" class="input_field" id="userName-login" name="userName" placeholder="User ID">
+
+				<!-- <label for="pwd">Password:</label> -->
+				<input type="password" class="input_field" id="password-login" name="password"
+					placeholder="Enter Your Password">
+				<span id="message"></span>
+				<br />
+				<br />
+
+				<!-- need to change onClick to gameWindow -->
+				<button type="submit" class="submit-btn">Log in</button>
+				<p class="form__text">
+					<a class="form__link" href="#" onClick="changeScreen('registration-screen')">Don't have an account?
+						Create account</a>
+				</p>
 			</form>
 		</div>
-		<div id="about-screen" class="screen" style="display: none;">
-			<h1 style="text-align: center;">this is the about screen</h1>
+
+		<!------about-screen------>
+		<div id="about-screen" class="screen" style="display: none" onclick="">
+			<!-- Link to open the modal -->
+			<a id="about-modal" href="#ex1" rel="modal:open" style="display: none">Open Modal</a>
+			<a id="win-modal" href="#ex2" rel="modal:open" style="display: none">Open Modal</a>
+			<a id="lose-ghost-modal" href="#ex3" rel="modal:open" style="display: none">Open Modal</a>
+			<a id="lose-time-modal" href="#ex4" rel="modal:open" style="display: none">Open Modal</a>
 		</div>
 
-		<div id="game-screen" class="screen" style="display: none;">
-			<h1 style="text-align: center;">this is the game screen</h1>
+		<!------settings-screen------>
+		<div id="settings-screen" class="screen" style="display: none;">
+			<div id="Settings">
+				<form id="" class="settings-form" onsubmit="return false">
+					<h1>Game settings:</h1>
+					<h3 style="font-family: monospace; letter-spacing: -1px;"><i>Select the game arrows you want to play
+							with</i></h3>
 
+					<table>
+						<tbody>
+							<tr>
+								<th><input type="button" class="arrows" id="upArrow" name="up-arrow" value="⇧"
+										onclick="changeArrowSettings('upArrow')">
+								</th>
+								<th><input type="button" class="arrows" id="downArrow" name="down-arrow" value="⇩"
+										onclick="changeArrowSettings('downArrow')"></th>
+							</tr>
+							<tr>
+								<td></td>
+								<td></td>
+							</tr>
+							<tr>
+								<td><input type="button" class="arrows" id="leftArrow" name="left-arrow" value="⇦"
+										onclick="changeArrowSettings('leftArrow')"></td>
+								<td><input type="button" class="arrows" id="rightArrow" name="right-arrow" value="⇨"
+										onclick="changeArrowSettings('rightArrow')"></td>
+							</tr>
+						</tbody>
+					</table>
+					<br />
+					<span id="msg-arrow-settings"></span>
 
-			<div id="score">
-				<label for="lblScore">SCORE:</label>
-				<input id="lblScore" type="text" />
+					<h3 id="selectBalls">Select the number of balls in the game:</h3>
+					<div class="slidecontainerB">
+						<label id="b50" class="between">50</label>
+						<input type="range" min="50" max="90" value="70" class="sliderB" id="Range_b">
+						<label id="b90" class="between">90</label>
+						<p style="font-family: monospace; margin: auto;">Value:<span id="balls"
+								style="font-family: monospace;"></span></p>
+					</div>
+
+					<h3 id="selectColor">Choose the color for each ball type:</h3>
+					<div>
+						<label id="colorpicker5" for="colorpicker">for 5 points :</label>
+						<input type="color" id="points5" value="#e66465" onchange="updateColorBalls('points5')">
+					</div>
+					<div>
+						<label id="colorpicker15" for="colorpicker">for 15 points:</label>
+						<input type="color" id="points15" value="#f6b73c" onchange="updateColorBalls('points15')">
+					</div>
+					<div>
+						<label id="colorpicker25" for="colorpicker">for 25 points:</label>
+						<input type="color" id="points25" value="#3cb371" onchange="updateColorBalls('points25')">
+					</div>
+
+					<h3 id="selectTime">Duration of the game:</h3>
+					<div class="slidecontainerT">
+						<label id="b60" class="between">60</label>
+						<input type="range" min="60" max="240" value="60" class="sliderT" id="Range_time">
+						<label id="b250" class="between">240</label>
+						<p style="font-family: monospace; margin: auto;"><span id="time"
+								style="font-family: monospace;"></span><label style="font-size:11px;"> seconds</label>
+						</p>
+					</div>
+
+					<h3 id="selectGhosts">Number of ghosts in the game:</h3>
+					<div class="slidecontainer">
+						<p id="ghost">choose number between 1-4 👻:
+							<select name="numGhosts" id="numGhosts" onchange="updateNumGhosts()">
+								<option id="4" selected="">4</option>
+								<option id="3">3</option>
+								<option id="2">2</option>
+								<option id="1">1</option>
+							</select>
+						</p>
+					</div>
+					<!-- todo: need to change id btn! -->
+					<button id="reg_btn" class="settings-btn" onClick="RandomSettings()">Random Values</button>
+					<button id="login_btn" class="settings-btn" onClick="changeScreen('game-screen'); Start();">Start
+						Game</button>
+
+				</form>
 			</div>
-			<div id="time">
-				<label for="lblTime">TIME:</label>
-				<input id="lblTime" type="text" />
+		</div>
+
+		<!------game-screen ------>
+		<div id="game-screen" class="screen" style="display: none">
+			<div class="footer-container">
+				<div class="footer-cointainer-child dar">
+					<div class="footer-social-icons">
+						<h4 style="
+				  text-align: center;
+				  font-size: 25px;
+				  letter-spacing: 15px;
+				  font-family: system-ui;
+				">SCORE</h4>
+						<ul class="social-icons">
+							<input id="lblScore" type="text"
+								style="background-color: black ; font-size:20px; text-align:center;color:greenyellow; letter-spacing:5px; border-style: outset; border-color:white ;" />
+						</ul>
+					</div>
+				</div>
+				<div class="footer-cointainer-child ido">
+					<div class="footer-social-icons">
+						<h4 style="
+				  text-align: center;
+				  font-size: 25px;
+				  letter-spacing: 15px;
+				  font-family: system-ui;
+				">TIME</h4>
+						<ul class="social-icons">
+							<input id="lblTime" type="text"
+								style="background-color: black ; font-size:20px; text-align:center;color:aqua; letter-spacing:5px; border-style: outset; border-color:white ;" />
+						</ul>
+					</div>
+				</div>
+				<div class="footer-cointainer-child ido">
+					<div class="footer-social-icons">
+						<h4 style="
+				  text-align: center;
+				  font-size: 25px;
+				  letter-spacing: 15px;
+				  font-family: system-ui;
+				">LIFE</h4>
+						<img id="life" style="width: 240px; height: 40px;" src="photos/lives/lives5.png" />
+					</div>
+				</div>
+				<div class="footer-cointainer-child ido">
+					<div class="footer-social-icons" style="margin-bottom: -145px;">
+						<h4 style="
+				  text-align: center;
+				  font-size: 25px;
+				  letter-spacing: 15px;
+				  font-family: system-ui;
+				">INFO</h4>
+						<P>Welcome <span id="user_id"> </span></P>
+						<div style="display:flex;">
+							<div style="float: left; width: 50%; flex: 50%;">
+								<P>⇧ is key <span id="keyup_id"> </span></P>
+								<P>⇩ is key <span id="keydown_id"> </span></P>
+								</P>
+								<P>⇨ is key <span id="keyright_id"> </span></P>
+								</P>
+								<P>⇦ is key <span id="keyleft_id"> </span></P>
+								</P>
+							</div>
+							<div style="float: left; width: 50%; flex: 50%;">
+								<P>The small food is color <span id="smallfood_id"> </span></P>
+								<P>The medium food is color <span id="mediumfood_id"> </span></P>
+								<P>The big food is color <span id="bigfood_id"> </span></P>
+								<P>The number of Ghost is <span id="ghostnumber_id"> </span></P>
+								</P>
+							</div>
+						</div>
+						<div> <img id="dar_ido" src="photos/other/info_pacman.jpg" style="width: 250px;
+							height: 350px;
+							margin-bottom: -40px;
+							margin-top: 5px;" /></div>
+						
+
+					</div>
+				</div>
 			</div>
 			<div id="game">
-				<canvas id="canvas" height="600" width="600"></canvas>
+				<!-- <button onClick="changeScreen('game-screen')">CLICK HERE TO PLAY</button> -->
+				<canvas id="canvas" height="600" width="600"
+					style="box-shadow: 10px 10px 20px black; background-color: black"></canvas>
 			</div>
 		</div>
+
 
 	</div>
 	<div id="footer">
@@ -144,36 +341,103 @@
 				</div>
 				<div class="footer-cointainer-child ido">
 					<div class="footer-social-icons">
-						<h4 class="_14" style="vertical-align:2px">About the project</h4>
+						<h4 class="_14">About the project</h4>
 						<span style="color: rgb(119, 119, 119);font-size: 13px;vertical-align:2px;">
-							This project was made in the scope of the Web Development course of Prof.
+							© 2022, This project was made in the scope of the Web Development course of Prof.
 							Erez Shalom and Mr.David Zeltser in the Ben-Gurion University, Israel </span>
 					</div>
 				</div>
 
 			</div>
 		</footer>
+
+
+		<!-- Modal HTML embedded directly into document -->
+		<div id="ex2" class="modal">
+			<p>Winner!!!</p>
+			<a href="#" rel="modal:close">NEW GAME</a>
+		</div>
+		<div id="ex1" class="modal">
+			<p style="font-style:italic;">You have reached the About page.</p>
+			<p style="font-style:italic;">
+				Here we are going to present some issues and problem we faced during
+				the project, present ourselves and mentione some libraries we used in our project.
+			</p>
+			<p style="
+            text-align: center;
+            font-size: 25px;
+            letter-spacing: 7px;
+            font-family: system-ui;
+          ">
+				ABOUT US
+			</p style>
+			<p style="text-align:center ;">We are<span id="names"> Ido Hersk </span> & <span id="names"> Dar Abu </span>
+			</p>
+
+			<center>
+				<img id="dar_ido" src="photos/about/Dar-Ido2.jpeg" style="width: 250px;
+			height: 350px;
+			margin-bottom: -40px;
+			margin-top: 5px;" />
+			</center>
+			<br />
+			<p style="
+            text-align: center;
+            font-size: 25px;
+            letter-spacing: 7px;
+            font-family: system-ui;
+			margin-bottom: -20px;
+          ">
+
+			</p style>
+			<br />
+			<br />
+			<br />
+			<p style="
+            text-align: center;
+            font-size: 25px;
+            letter-spacing: 7px;
+            font-family: system-ui;
+          ">
+				LIBRARIES
+			</p style>
+			<p style="text-align:center ;">We used JQuery Modal, JQuery Validation and a template for the footer social
+				network's icons</p>
+			<br />
+			<br />
+			<br />
+			<p style="
+            text-align: center;
+            font-size: 25px;
+            letter-spacing: 7px;
+            font-family: system-ui;
+          ">
+				CHALLENGES
+			</p style>
+			<center>
+				<p>Ghost spawn and moves</p>
+				<p>Local Storage</p>
+				<p>form input</p>
+				<p>javascript modality</p>
+				<p>Setting page</p>
+			</center>
+
+			<a href="#" rel="modal:close">Close</a>
+		</div>
 	</div>
 
-	<!--  scripts  -->
-	<!-- <script>
-		var x = document.getElementById("login");
-		var y = document.getElementById("register");
-		var z = document.getElementById("btn");
+	<script src="./scripts/jquery-3.4.1.slim.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
 
-		function login() {
-			x.style.left = "-400px";
-			y.style.left = "50px";
-			z.style.left = "110px";
-		}
+	<script type="text/javascript" src="./scripts/general.js"></script>
+	<script type="text/javascript" src="./scripts/register.js"></script>
+	<script type="text/javascript" src="./scripts/login.js"></script>
+	<script type="text/javascript" src="./scripts/settings.js"></script>
+	<script type="text/javascript" src="./scripts/app.js"></script>
 
-		function register() {
-			x.style.left = "50px";
-			y.style.left = "450px";
-			z.style.left = "0px";
-		} -->
 
-	</script>
 
 </body>
 

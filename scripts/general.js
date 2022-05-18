@@ -9,3 +9,12 @@ function changeScreen(id){
 function hideAllScreens(){
     $(".screen").hide();
 }
+
+// function openAboutWindow(){
+//     // about modal script
+//     let aboutBtn = document.getElementById("About_btn");
+//     let modal = document.getElementById("about-screen");
+//     // let closeBtn = document.getElementById("about-close-btn");
+//     modal.style.display = "block"
+// }
+

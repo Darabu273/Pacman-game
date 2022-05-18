@@ -1,0 +1,56 @@
+.slider {
+    width: 40%;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.between {
+    font-family: monospace;
+}
+
+#selectBalls, #selectTime , #selectGhosts{
+    font-family: monospace;
+    letter-spacing: 0px;
+}
+
+#numGhosts, [id^="colorpicker"] , #ghost{
+    font-family: monospace;
+
+}
+
+#number{
+    width: 3em;
+  }
+
+#selectColor{
+    letter-spacing: -1px;
+    font-family: monospace;
+
+}
+
+.settings-btn {
+    font-family: monospace;
+    background: linear-gradient(to right, #ff2410, #ffad06);
+    box-shadow: 0 0 20px 9px #f147041f;
+    color: rgb(253, 253, 223);
+    padding: 5px 160px;
+    margin: 5px 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: .5s;
+    font-size: 18px;
+    border: 0;
+    position: relative;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 80%;
+
+}

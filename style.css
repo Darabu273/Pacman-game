@@ -1,53 +1,60 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: cursive; 
-    /*sans-serif*/
+* {
+    font-family: sans-serif;
+
 }
 
-#menuContainar{
+#menuContainar {
     margin: 0;
     background-color: black;
     padding: 0 0px;
     height: 60px;
     line-height: 60px;
-	font-size: 2em;
+    font-size: 24px;
     text-align: center;
 }
 
-#menuContainar.fixed {
-    position: fixed;
-    background-color: #1e202b;
-    z-index: 10000;
-    top: 0;
-    left:0;
-    right: 0;;
-
-}
-
-#menuContainar > li{
+#menuContainar>li {
     display: inline-block;
     padding: 0px;
 
 }
 
-#header{
-    background-color :black;
+#header {
+    background-color: black;
     padding-top: 10px;
+    padding-bottom: 10px;
+    height: 120px;
 }
 
-.button {
+#ourNames {
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    padding-top: 42px;
+    margin-block-start: 15px;
+}
+
+#names {
+    white-space: pre-wrap;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+/* -----Menubar - buttons----- */
+
+.btn-menu {
     color: black;
     border: 2px solid red;
-	padding: 5px 40px;
+    padding: 5px 40px;
     margin: 5px 20px;
     font-family: cursive;
-    text-transform: uppercase; 
-	font-size: 15px;
+    text-transform: uppercase;
+    font-size: 15px;
     letter-spacing: 1px;
     box-shadow: 0 0 10px beige;
     background-color: white;
-  }  
+}
 
 /*creating animation effect*/
 button:hover {
@@ -55,23 +62,21 @@ button:hover {
     background: black;
     box-shadow: 0 0 50px rgb(88, 193, 246);
     border: 2px solid gray;
-} 
+}
 
-#ourNames{
-    color: white;
-    text-align: center; 
-    font-size: 18px; 
-    padding-top: 60px;
-    margin-block-start: 15px;
+button:active {
+    transform: scale(0.98);
+}
+
+/* -----Content----- */
+body {
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #ff2410, #ffad06);
 
 }
-#names{
-    white-space: pre;
-    letter-spacing: 5px;
-    font-weight:bold; 
-    font-size :21px;
-}
-.Content{
+
+.Content {
     height: 100%;
     width: 100%;
     background-image: url(photos/background1.jpg);
@@ -79,151 +84,183 @@ button:hover {
     background-size: cover;
     display: flex;
     justify-content: center;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    text-align: center;
+    flex-flow: row;
+}
 
-}  
- #home-screen{ 
-    width: 380px;
-    height: 480px;
+#pacman_title {
+    margin: 70px;
+    width: 150px;
+    height: 170px;
+
+}
+
+#home-screen {
     position: relative;
     margin: 10px 35%;
+    /*about the button in the same row or not*/
     /* background: rgb(20, 20, 20); */
     padding: 5px;
-    
-} 
-
-
-.Home_button{
-    width: 220px;
-    margin:1px 20%; /* 3px auto; */
-    position: relative;
-    padding-top: 30px;
-    
-    
-
 }
 
-.button-lr{
+.Home_button {
+    margin: 1px auto;
+}
+
+.button-lr {
     font-family: cursive;
-    padding: 10px 30px;
-    cursor: pointer;
-    background: transparent;
-    border: 0;
-    position: relative;
+    background: linear-gradient(to right, #ff2410, #ffad06);
     box-shadow: 0 0 20px 9px #f147041f;
     color: rgb(253, 253, 223);
-    border-radius: 20px;
-    background: linear-gradient(to right, #ff2410, #ffad06);
+    padding: 5px 80px;
+    margin: 5px 20px;
+    font-size: 15px;
+    letter-spacing: 1px;
     transition: .5s;
-    margin-top: 40px;
-    text-align: center;
     font-size: 18px;
-    justify-content: center;
-	padding: 9px 30px;
-    width: 250px;
-    position:relative;
-
-    
-
+    border: 0;
+    position: relative;
+    border-radius: 20px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    /* width: 100%; */
 
 }
 
-.input-group{
-    top: 180px;
+
+#registration-screen {
+    width: 380px;
+    height: 470px;
+    background: rgb(20, 20, 20);
+    position: relative;
+    margin: 3% auto;
+    padding: 5px;
+    opacity: 0.8;
+
+    /* margin: 15% auto; */
+}
+
+#login-screen {
+    width: 380px;
+    height: 290px;
+    position: relative;
+    margin: 5% auto;
+    background: rgb(20, 20, 20);
+    padding: 5px;
+    opacity: 0.8;
+    /* font-family: 'Quicksand', sans-serif; */
+
+}
+
+#settings-screen{
+    width: 550px;
+    /* height: 800px; */
+    /* width: 478px; */
+    height: 737px;
+    background: rgb(30, 227, 241);
+    position: relative;
+    margin: 3% auto;
+    padding: 5px;
+    opacity: 0.9;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    top: 10px;
+    left: 50px;
     position: absolute;
     width: 280px;
-    transition:.5s;
+    transition: .5s;
+    color: white;
 }
 
-.input_field{
+.input_field {
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 5px;
     margin: 5px 0;
     border-left: 0;
     border-right: 0;
-    border-bottom: 1px solid rgb(248, 246, 246);
+    border-top: 0;
+
+    /* border-bottom: 1px solid rgb(248, 246, 246); */
     outline: none;
     background: transparent;
     color: white;
 }
 
-.submit-btn{
+.submit-btn {
     width: 85%;
-    padding: 10px 30px; /*left right */
+    padding: 10px 30px;
+    /*left right */
     cursor: pointer;
     display: block;
     margin: auto;
-    background: linear-gradient(to right,#ff2410, #ffad06);
+    background: linear-gradient(to right, #ff2410, #ffad06);
     border: 0;
     outline: none;
     border-radius: 30px;
     color: rgb(253, 253, 223);
     box-shadow: 0 0 20px 22px #f147041f;
-} 
-
-
-/* .social-icons{
-    margin: 30px auto;
-    text-align: center;
 
 }
 
-.social-icons img{
-    width: 30px;
-    margin: 0 12px;
-    box-shadow: 0 0 20px 0 #7f7f7f3d;
-    cursor: pointer;
-    border-radius: 50%;
-} */
+h1 {
+    font-size: 25px;
+    letter-spacing: 7px;
+    font-family: system-ui;
+}
 
-#pacman_title{
-    display: block;
+.error , #message, #msg-arrow-settings ,#msg-illegal-number{
+    color: red;
+
+    margin-top: 0.2rem;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.form__link {
+    color: rgb(240, 196, 64);
+    text-decoration: none;
+    /* cursor: pointer; */
+    font-size: 15px;
+}
+
+.form__link:hover {
+    text-decoration: underline;
+}
+
+
+/* Settings */
+.arrows{
+    margin-top: 0px;
+    background-color: #141414;
+    border: none;
+    width: 5vw;
+    height: 4vw;
+    font-size: 3vw;
+    color: #FFFFFF;
+    border-radius: 0.5vw;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+table{
     margin-left: auto;
     margin-right: auto;
-    margin-top: 20px;
-    width: 150px;
-    height: 150px;
 }
 
-#login{
-    left: 50px;
+/*creating animation effect*/
+.arrows:hover {
+    color: white;
+    background: black;
+    box-shadow: 0 0 20px rgb(213, 214, 218);
+    border: 2px solid rgb(20, 83, 156);
 }
 
-#register{
-    left: 50px;
-}
 
-#login_btn{
-    margin-left: 5px;
+  
 
-}    
-
-
-/* nav{
-	background-color:red;
-	float: left;
-	width:150px;
-	height:500px;
-} */
-
-
-#registration-screen{ 
-        width: 380px;
-        height: 480px;
-        position: relative;
-        margin: 6% auto;
-        background: rgb(20, 20, 20);
-        padding: 5px;
-        opacity: 0.8;
-
-}  
-
- #login-screen{
-    width: 380px;
-    height: 480px;
-    position: relative;
-    margin: 6% auto;
-    background: rgb(20, 20, 20);
-    padding: 5px;
-    opacity: 0.8;
-} 
