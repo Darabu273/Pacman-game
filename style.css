@@ -73,6 +73,8 @@ body {
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #ff2410, #ffad06);
+    zoom: 82%;
+
 
 }
 
@@ -154,7 +156,7 @@ body {
 
 }
 
-#settings-screen{
+#settings-screen {
     width: 550px;
     /* height: 800px; */
     /* width: 478px; */
@@ -213,7 +215,10 @@ h1 {
     font-family: system-ui;
 }
 
-.error , #message, #msg-arrow-settings ,#msg-illegal-number{
+.error,
+#message,
+#msg-arrow-settings,
+#msg-illegal-number {
     color: red;
 
     margin-top: 0.2rem;
@@ -234,7 +239,7 @@ h1 {
 
 
 /* Settings */
-.arrows{
+.arrows {
     margin-top: 0px;
     background-color: #141414;
     border: none;
@@ -248,7 +253,7 @@ h1 {
 }
 
 
-table{
+table {
     margin-left: auto;
     margin-right: auto;
 }
@@ -261,6 +266,4 @@ table{
     border: 2px solid rgb(20, 83, 156);
 }
 
-
-  
 

@@ -1,4 +1,3 @@
-document.body.style.zoom = "90%";
 var currPlayer;
 var context;
 let pacman;
@@ -284,7 +283,7 @@ function Start() {
   );
   monsterTime = Date.now();
   gameBegin.play();
-  cherieInterval = setInterval(updateCherryPosition, 400);
+  cherieInterval = setInterval(updateCherryPosition, 1300);
 }
 
 function createGhostArmy(numb) {
@@ -843,7 +842,7 @@ function UpdatePosition() {
     score = score + 5;
     waka.play();
   } else if (board[pacman.i][pacman.j] == 3) {
-    score = score + 10;
+    score = score + 15;
     waka.play();
   } else if (board[pacman.i][pacman.j] == 5) {
     score = score + 25;

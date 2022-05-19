@@ -6,32 +6,24 @@ li > a:hover{
     color: #d9d9d9;
     text-decoration:  underline;
 }
-/* move the icoms left */
-/* ul {
-    padding:0;
-    list-style: none;
-} */
+
 .footer-social-icons {
     width: 350px;
-    display:block; /* noNeed */
-    margin: 0 auto;/* noNeed */
+    display:block;
+    margin: 0 auto;
 
 }
-/* .social-icon {
-    color: rgb(248, 11, 11);
-} */
+
 ul.social-icons {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 .social-icons li {
     display: inline;
-    /* height: 100px; *//*------ noNeed */
-     /* vertical-align: top; *//* -----noNeed */
+
 }
 .social-icons a {
     color: #fff;
-    /* text-decoration: none; */
 }
 .fa-facebook {
     padding:10px 14px;
@@ -109,20 +101,15 @@ ul.social-icons {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60px;
+    height: 73px;
     border-top: 3px solid rgb(49, 38, 38);
     padding: 80px ;
     font-size: 15px;
     color: #f6d267;
-    /* background-color: rgb(1, 1, 10); */
-    background-color: black;
+    
 
 }
-/* -----noNeed */
-/* .footer-container-child {
-    flex: 1;
-    border: 2px solid yellow;
-}   */
+
 
 .footer-container-child:first-child {
     margin-right: 20px;
