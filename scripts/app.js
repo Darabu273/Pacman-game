@@ -520,22 +520,22 @@ function drawGhost(centx, centy) {
 
 function loadLifeImagesArray() {
   const life5 = new Image();
-  life5.src = "photos/lives/lives5.png";
+  life5.src = "./photos/lives/lives5.png";
 
   const life4 = new Image();
-  life4.src = "photos/lives/lives4.png";
+  life4.src = "./photos/lives/lives4.png";
 
   const life3 = new Image();
-  life3.src = "photos/lives/lives3.png";
+  life3.src = "./photos/lives/lives3.png";
 
   const life2 = new Image();
-  life2.src = "photos/lives/lives2.png";
+  life2.src = "./photos/lives/lives2.png";
 
   const life1 = new Image();
-  life1.src = "photos/lives/lives1.png";
+  life1.src = "./photos/lives/lives1.png";
 
   const life0 = new Image();
-  life0.src = "photos/lives/lives0.png";
+  life0.src = "./photos/lives/lives0.png";
 
   lifeImages = [life0, life1, life2, life3, life4, life5];
   return lifeImages;
@@ -543,16 +543,16 @@ function loadLifeImagesArray() {
 
 function loadPacmanImagesArray() {
   const pacmanImage1 = new Image();
-  pacmanImage1.src = "photos/pacm/pac2_up.png";
+  pacmanImage1.src = "./photos/pacm/pac2_up.png";
 
   const pacmanImage2 = new Image();
-  pacmanImage2.src = "photos/pacm/pac2_down.png";
+  pacmanImage2.src = "./photos/pacm/pac2_down.png";
 
   const pacmanImage3 = new Image();
-  pacmanImage3.src = "photos/pacm/pac2_right.png";
+  pacmanImage3.src = "./photos/pacm/pac2_right.png";
 
   const pacmanImage4 = new Image();
-  pacmanImage4.src = "photos/pacm/pac2_left.png";
+  pacmanImage4.src = "./photos/pacm/pac2_left.png";
 
   pacmanImages = [pacmanImage1, pacmanImage2, pacmanImage3, pacmanImage4]; //up down right left
   return pacmanImages;
