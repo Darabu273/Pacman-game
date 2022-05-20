@@ -8,7 +8,7 @@ The idea was to create from scratch the famous Pacman game which we all know, bu
 
 ## Getting Started
 
-In order to play the game you just simply need to [click here]() , you will be redirected to the game.
+In order to play the game you just simply need to [click here](https://web-development-environments-2022.github.io/assignment2-316294032_204809867/) , you will be redirected to the game.
 Please note that you can enter default connection credentials if you wish not register yourself.
 The default Username and Password are :
 Username : k
