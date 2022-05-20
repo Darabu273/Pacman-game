@@ -16,9 +16,9 @@ Password : k
 
 ## Authors
 
-[Dar Abu](https://github.com/Darabu273)
+[Dar Abu](https://github.com/Darabu273) - 316294032
 
-[Ido Hersko](https://github.com/idohersko)
+[Ido Hersko](https://github.com/idohersko) - 204809867
 
 
 ## The Game
