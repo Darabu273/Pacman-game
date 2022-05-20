@@ -51,8 +51,8 @@ and.. since we know you love to gamble, you can take the mystery box, by taking 
 So don't be reckless and play the game of life and death carefully ;)
 
 
+### Home Screen
+![image](https://user-images.githubusercontent.com/66033664/169525784-72e78053-6f13-403f-aa4d-132ea1781b4f.png)
 
-
-
-
-
+### Game Screen
+![image](https://user-images.githubusercontent.com/66033664/169527390-4e752a19-62cd-4968-a0de-2bd98da20c7d.png)
