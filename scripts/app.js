@@ -653,7 +653,7 @@ function updateGhostPosition() {
   }
   if (arrayOfGhost.length > 0) {
     for (i = 0; i < arrayOfGhost.length; i++) {
-      if (arrayOfGhost[i].prev != 2 || arrayOfGhost[i].prev != 6) {
+      if (arrayOfGhost[i].prev != 2 && arrayOfGhost[i].prev != 6) {
         board[arrayOfGhost[i].i][arrayOfGhost[i].j] = arrayOfGhost[i].prev;
       }
       let nextStep = predict_next_ghost_step(
